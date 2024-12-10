@@ -61,7 +61,7 @@ export default function Home() {
             <table className="w-full text-left border-collapse">
               <thead>
                 <tr>
-                  <th className="px-4 py-2 text-gray-700 border-b font-medium whitespace-nowrap min-w-[80px]">
+                  <th className="px-4 py-2 text-gray-700 border-b font-medium whitespace-nowrap min-w-[80px] text-bold">
                     No:
                   </th>
                   <th className="px-4 py-2 text-gray-700 border-b font-medium whitespace-nowrap min-w-[150px]">
@@ -121,7 +121,7 @@ export default function Home() {
             type="text"
             onChange={(e) => setTodoInput(e.target.value)}
             placeholder="Enter your todo"
-            className="border p-2 rounded w-full mb-2"
+            className="border p-2 rounded w-full mb-2 bg-black text-white"
             value={todoInput}
           />
           <button
