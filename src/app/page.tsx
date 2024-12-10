@@ -1,5 +1,5 @@
 "use client";
-import { useState} from "react";
+import { useState, useEffect } from "react";
 import { FaTrash } from "react-icons/fa";
 
 
@@ -12,7 +12,16 @@ export default function Home() {
   
 
   const [todo, setTodo] = useState<Todos[]>([]);
+  useEffect(() => {
+    const savedTodo = localStorage.getItem("todo");
+    if (savedTodo) {
+      const parsedTodo = JSON.parse(savedTodo);
+      setTodo(parsedTodo);
+    }
+
   
+  }, []);
+
   const [todoInput, setTodoInput] = useState<string>("");
 
   const deleteTodo = (d: Todos) => {
@@ -37,6 +46,7 @@ export default function Home() {
     setTodoInput("");
   };
 
+  // new Date().getFullYear() - birthYear
 
   return (
     <div className="max-w-6xl mx-auto bg-white mt-40 border shadow-md rounded-lg p-6 ">
